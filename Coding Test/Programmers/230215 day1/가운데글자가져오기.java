@@ -10,7 +10,7 @@ public class 가운데글자가져오기 {
         String answer = "";
         int a = s.length()/2;
         System.out.println(a);
-        if (s.length()%2==0){
+        if (s.length()%2==0){           // 홀수짝수구분 오타안나게 조심!!
             answer = s.substring(a-1,a+1);
         } else {
             answer = s.substring(a,a+1);
