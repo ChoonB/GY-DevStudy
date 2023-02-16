@@ -16,3 +16,13 @@ Integer.parseInt()을써서 문자열을 숫자로 바꾸고 누적합.
 for (int i = str.length-1, j = 0; i >= 0 ; i--, j++)
 for문에 i는 뒤에서 j는 0에서 시작하게 해서 i,j 값 뒤집어
 Integer.parseInt()을써서 문자열을 숫자로 바꿔서 int배열로 저장
+
+24번 정수내림차순으로배치하기 : 쉽게 풀었지만 런타임에러 났었다.
+String[] str = s.split("");	// 문자열s를 글자마다 분해해 배열str에 넣는다
+Arrays.sort(str);		// 오름차순으로 정렬한다.
+String p = String.join("",rev);// 배열rev에 있는 각각의 원소를 합쳐 문자열p에 넣는다.
+
+런타임 에러 나는 이유!!!
+long answer 로 선언했는데 
+Integer.parseInt(p);	로 바꿔서 런타임에러
+Long.parseLong(p); 로 쓰면 런타임에러 해결
