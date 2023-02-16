@@ -50,3 +50,6 @@ while 반복문으로 t++; if(t==a){continue;} answer[s] = arr[t]; s++해서
 28번 하샤드수 : 쉽게품
 입력값 String 배열로 자릿수별로 저장한뒤에
 for문으로 Integer.parseInt(str[i]) 한 값 sum에 저장시키고 나머지값 확인.
+
+29번 챌_3진법뒤집기 : 쉽게품
+진법변환해서 char배열로 바꿔서 뒤집은다음에 다시 진법변환
