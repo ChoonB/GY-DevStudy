@@ -38,3 +38,8 @@ for문으로 안돌리고 long i 로 선언 후 while로 돌리고
 저장하는 반복문에서 변수를 2개로 int s = 0; int t = -1;두고
 while 반복문으로 t++; if(t==a){continue;} answer[s] = arr[t]; s++해서
 중간 continue로 최소값index만 skip시켜 처리.
+
+27번 콜라츠추측 : 쉬우나 long int에서 약간 문제있었음
+그냥 경우 나눠서 if문으로 해결하면됨.
+근데 중간결과값이 int에서 오버플로우 되서 오류 뜸.
+중간 결과값만 long으로 선언해주면 해결.
