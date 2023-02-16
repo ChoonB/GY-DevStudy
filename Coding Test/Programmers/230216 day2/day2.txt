@@ -8,7 +8,11 @@ String answer += a[i] : for문으로 돌려서 문자열 뒤에 하나하나 붙
 후자는 되고 전자는 안되는 이유?
 
 22번 자릿수더하기 : 쉽게품
-각 자리수를 String 배열로 저장(""+n)해서
+각 자리수를 String 배열로 저장(s = ""+n 한 뒤 str = s.split(""))해서
 Integer.parseInt()을써서 문자열을 숫자로 바꾸고 누적합.
 
-
+23번 자연수뒤집어배열로만들기 : 쉽게품
+자연수 n 을  String배열로 저장(s = ""+n 한 뒤 str = s.split(""))해서
+for (int i = str.length-1, j = 0; i >= 0 ; i--, j++)
+for문에 i는 뒤에서 j는 0에서 시작하게 해서 i,j 값 뒤집어
+Integer.parseInt()을써서 문자열을 숫자로 바꿔서 int배열로 저장
