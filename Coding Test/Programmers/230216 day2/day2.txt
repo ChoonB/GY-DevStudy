@@ -26,3 +26,8 @@ String p = String.join("",rev);// 배열rev에 있는 각각의 원소를 합쳐
 long answer 로 선언했는데 
 Integer.parseInt(p);	로 바꿔서 런타임에러
 Long.parseLong(p); 로 쓰면 런타임에러 해결
+
+25번 정수제곱근 판별 : 쉽게품
+n과 answer가 long이라서
+for문으로 안돌리고 long i 로 선언 후 while로 돌리고
+안에 break 넣은 if문 사용.
