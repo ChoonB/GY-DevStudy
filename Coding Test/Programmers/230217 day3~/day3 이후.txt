@@ -42,3 +42,6 @@ count가 2넘어가면 바로 break, count가 1(1로만 나누어 떨어지는 �
 str2 = str1.replace(바꿔야하는문자열,바꿀문자열);
 Integer.toString();	int > String
 Integer.parseInt();	String > int
+
+39번 챌_시저암호 : 쉽게 해결
+char의 초기값은 \u0000 이다 이거만 알면 쉽게 해결가능
