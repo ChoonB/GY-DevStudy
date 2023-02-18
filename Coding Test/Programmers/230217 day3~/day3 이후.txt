@@ -25,3 +25,9 @@ c1~3, t1~3 = 0으로 만들고
 char[i]와 String[j]가 같으면서 int[]에 0인거만
 answer[i] 안에 String[j] 넣으면서 int[]에 1부여해주면 됨.
 중요한건 기록지 int[]만들어서 활용하는거!!!
+
+36번 챌_문자열내림차순으로배치하기 : 쉬움
+String을 char배열로 저장
+ArrayList 소문자 대문자 2개 생성해서 각각에 add
+Collections.sort(배열이름, Collections.reverseOrder()); 으로 각각 역정렬
+String.valueOf(배열이름.get(i)) 로 char를 String으로 변환해서 answer에 저장.
