@@ -37,3 +37,8 @@ String.valueOf(배열이름.get(i)) 로 char를 String으로 변환해서 answer
 for (int l = 1; l < (nums[i]+nums[j]+nums[k]); l++)  자기자신으로는 안나눈다
 nums[i]+nums[j]+nums[k] % l == 0일때 카운트 올려서
 count가 2넘어가면 바로 break, count가 1(1로만 나누어 떨어지는 수) 일때만 answer++
+
+38번 챌_숫자문자열과영단어 : replace만 알면 쉬움
+str2 = str1.replace(바꿔야하는문자열,바꿀문자열);
+Integer.toString();	int > String
+Integer.parseInt();	String > int
