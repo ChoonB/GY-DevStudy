@@ -31,3 +31,9 @@ String을 char배열로 저장
 ArrayList 소문자 대문자 2개 생성해서 각각에 add
 Collections.sort(배열이름, Collections.reverseOrder()); 으로 각각 역정렬
 String.valueOf(배열이름.get(i)) 로 char를 String으로 변환해서 answer에 저장.
+
+37번 챌_소수만들기 : 쉬움
+3중포문으로 i=0 j=i+1 k=j+1 로 설계한다음 그안에 for문 하나 더
+for (int l = 1; l < (nums[i]+nums[j]+nums[k]); l++)  자기자신으로는 안나눈다
+nums[i]+nums[j]+nums[k] % l == 0일때 카운트 올려서
+count가 2넘어가면 바로 break, count가 1(1로만 나누어 떨어지는 수) 일때만 answer++
