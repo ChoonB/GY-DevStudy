@@ -45,7 +45,7 @@ public class 시험_지뢰탐지가필요해 {
                     tmp = (bomb[i-1][j-1]+bomb[i-1][j]+bomb[i-1][j+1]
                             +bomb[i][j-1]+bomb[i][j+1]
                             +bomb[i+1][j-1]+bomb[i+1][j]+bomb[i+1][j+1]);
-                    if(tmp>10){
+                    if(tmp>=10){
                         answer[i][j] = 'M';
                     }else {
                         answer[i][j] = (char)(tmp + '0');
@@ -57,28 +57,28 @@ public class 시험_지뢰탐지가필요해 {
 //        1-2. 구석일때 3개 더하는 칸
         if(N>1){
             tmp = (bomb[0][1] + bomb[1][0] + bomb[1][1]);
-            if(tmp>10){
+            if(tmp>=10){
                 answer[0][0] = 'M';
             }else {
                 answer[0][0] =(char)(tmp + '0');
             }
 
             tmp = (bomb[0][N-2] + bomb[1][N-2] + bomb[1][N-1]);
-            if(tmp>10){
+            if(tmp>=10){
                 answer[0][N-1] = 'M';
             }else {
                 answer[0][N-1] = (char)(tmp + '0');
             }
 
             tmp = (bomb[N-2][0] + bomb[N-2][1] + bomb[N-1][1]);
-            if(tmp>10){
+            if(tmp>=10){
                 answer[N-1][0] = 'M';
             }else {
                 answer[N-1][0] = (char)(tmp + '0');
             }
 
             tmp = (bomb[N-2][N-1] + bomb[N-2][N-2] + bomb[N-1][N-2]);
-            if(tmp>10){
+            if(tmp>=10){
                 answer[N-1][N-1] = 'M';
             }else {
                 answer[N-1][N-1] = (char)(tmp + '0');
@@ -90,7 +90,7 @@ public class 시험_지뢰탐지가필요해 {
             for (int i = 1; i < answer.length-1; i++) {
                 tmp = (bomb[0][i-1]+bomb[0][i+1]
                         +bomb[1][i-1]+bomb[1][i]+bomb[1][i+1]);
-                if(tmp>10){
+                if(tmp>=10){
                     answer[0][i] = 'M';
                 }else {
                     answer[0][i] = (char)(tmp + '0');
@@ -101,7 +101,7 @@ public class 시험_지뢰탐지가필요해 {
             for (int i = 1; i < answer.length-1; i++) {
                 tmp = (char) (bomb[i - 1][0] + bomb[i - 1][1]
                         + bomb[i][1] + bomb[i + 1][1] + bomb[i + 1][0]);
-                if(tmp>10){
+                if(tmp>=10){
                     answer[i][0] = 'M';
                 }else {
                     answer[i][0] = (char)(tmp + '0');
@@ -112,7 +112,7 @@ public class 시험_지뢰탐지가필요해 {
             for (int i = 1; i < answer.length-1; i++) {
                 tmp = (char) (bomb[N-1][i-1] + bomb[N-2][i-1]
                         + bomb[N-2][i] + bomb[N-2][i+1] + bomb[N-1][i+1]);
-                if(tmp>10){
+                if(tmp>=10){
                     answer[N-1][i] = 'M';
                 }else {
                     answer[N-1][i] = (char)(tmp + '0');
@@ -123,7 +123,7 @@ public class 시험_지뢰탐지가필요해 {
             for (int i = 1; i < answer.length-1; i++) {
                 tmp = (char) (bomb[i-1][N-1] + bomb[i-1][N-2]
                         + bomb[i][N-2] + bomb[i+1][N-2] + bomb[i+1][N-1]);
-                if(tmp>10){
+                if(tmp>=10){
                     answer[i][N-1] = 'M';
                 }else {
                     answer[i][N-1] = (char)(tmp + '0');
