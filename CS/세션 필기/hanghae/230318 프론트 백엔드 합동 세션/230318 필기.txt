@@ -1,0 +1,59 @@
+질문 : 
+백엔드가 프론트에게 response body로 줄 때 id가 꼭필요하다고 하셨는데
+id는 꼭 키값이 "id"여야하나요?
+"postId"나 "commentId" 같이 명칭이 바뀌면 안되나요?
+==> 명칭 바꾸는게 낫긴하다.
+
+백엔드 컨트롤러에서 request로 들어온 값들을 파라미터로 받을때 final을 쓰시는 이유가 있을까요?
+
+dto.toEntity?
+dto.from()?
+-----------------------------------------
+
+post put get같은 메서드에상관 없이 데이터를 담으려면 header에
+대부분은 인증키 JWT토큰같은거
+
+post put같은데 쓰려면 body에
+각 오브젝트마다 고유한 id값이 필요하다
+
+@Pathvariable같이 경로에 드러나는건 데이터 양이 적고 드러나도 괜찮을때
+
+application.properties를 github를 올릴 때
+username과 password를 암호화해서 올리면 된다.
+jsypt 라이브러리를 쓰면 민감한 정보를 암호화한다.
+실행할때는 해독해서 쓴다.
+
+application.properties는 환경에따라 여러 파일로 분리해서쓰면 좋다. yml로 쓰면 된다.
+
+postman 토큰 쉽게 넣는 코드가있다.
+
+CORS : 다른 출처의 자원을 받아서 공유할수 있게하는 정책.
+CORS는 브라우저의 정책. 서버에서는 확인할 수 없다. 서버에서는 정상적으로 처리된 것 처럼 보임
+프리플라이트 요청 : 일반적일때는 이거 사용. 본요청 사용 전에 cors위반하는지 안하는지 알아보는 요청
+클라이언트가 보내고 서버가 응답으로 보내는데 origin이랑 access-control-allow-origin이랑 비교해서
+같아야 통과가 된다.
+
+백에서는 기본적으로 access-control-allow-origin를 클라이언트 요청이 들어오는 출처로 설정하면 된다.
+
+securityConfig에 public CorsConfigurationSource를 만들고
+config.addAllowedOrigin("출처");
+"*"를쓰면 다 허용해준다.
+
+그리고 filterchain에
+http.cors();를 꼭 해줘야한다.
+
+cf. SOP : 동일출처정책.
+
+
+-------------------
+vapi 주소 단수형을 복수형
+v작성완료는 created 201로 수정?
+vtitle content 최대 글자수 걸어야한다.
+v 프론트분들께 저희 토큰에 "Bearer " 붙어있어요 말하기
+
+jwt 토큰이랑 security랑 같이 쓸때 중복?
+
+
+
+
+

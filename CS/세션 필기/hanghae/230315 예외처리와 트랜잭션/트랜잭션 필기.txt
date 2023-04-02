@@ -1,0 +1,11 @@
+Spring Security 적용하니까 필터에서 발생한 예외는 ControllerAdvice에서 
+예외처리가 안되는것 같던데 처리 방법이 있을까요?
+
+config에 messageConfig 만들고 빈으로 만든다음에 messageSource 만들고
+messages.properties에 에러코드 설명을 키=밸류로 만들고
+service에서 private final MessageSource로 불러와서
+등록해둔 에러코드를 사용하면 됨.
+code 키값
+args 걍 잘안써서 null
+(필수 아님)defaultMessage : 혹시 위에꺼 오류로 안되면 내보낼 대체 메세지
+Locale.getDefault() : 다국어 정보 줄수있음 ㅇㅇ
