@@ -1,0 +1,21 @@
+robbie-sollertia.notion.site/HTTP-MVC-Live-Lecture-942a7e56ac0c4fedbedcaa7e1d0c0233#7fecf100820d4b0dbdf6cc7b3b6b10fe
+
+http는 80번포트 https는 443번 포트
+https(SSL/TLS) << 나중에 항해하는중에 공부 한번 해야
+PUT은 보통 업데이트할때
+patch는 보통 작은범위 일부분 수정할때 
+
+3xx번대 추가적인 조치가 필요할때
+
+URL  
+큰범위는 URI
+그중에 한 부분이 URL 인터넷 상에서의 위치
+
+요즘은 거의 JSON으로 하기때문에
+@RestController 거의 씀 항해에서도 거의
+
+@RequestParam
+@PathVariable
+@RequestBody 3개를 제일 많이 씀
+
+html 나중에 공부 해야
