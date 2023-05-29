@@ -25,3 +25,12 @@ https://school.programmers.co.kr/learn/courses/30/lessons/42628
 - 최소값은 위의 과정을 최소힙 최대힙 역할을 바꿔서 진행한다.
 - 두 힙에서 아무 값도 없으면 0을 반환하고 아니면 최대값과 최소값을 반환한다.
 - 통과는 했지만 remove의 시간복잡도가 마음에 들지 않아 다른 방식으로 풀어보려 한다.
+
+## 이중우선순위큐 트리맵으로 해결
+https://school.programmers.co.kr/learn/courses/30/lessons/42628
+
+- 최대힙, 최소힙으로 하면 remove에서 시간복잡도가 오래 걸려 이진탐색트리(레드블랙트리)를 활용
+- 트리셋을 쓰면 중복케이스가 해결이 안되므로 트리맵을 써서 해결
+- key값에 숫자, value에 해당 숫자의 갯수를 배정해 entry 구성
+- 최대값은 lastKey(), 최소값은 firstKey()로 뽑아냄
+- 전체 코드의 시간복잡도가 O(n^2)에서 O(N log n)으로 감소
