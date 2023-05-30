@@ -26,11 +26,18 @@ https://school.programmers.co.kr/learn/courses/30/lessons/42628
 - 두 힙에서 아무 값도 없으면 0을 반환하고 아니면 최대값과 최소값을 반환한다.
 - 통과는 했지만 remove의 시간복잡도가 마음에 들지 않아 다른 방식으로 풀어보려 한다.
 
-## 이중우선순위큐 트리맵으로 해결
-https://school.programmers.co.kr/learn/courses/30/lessons/42628
-
+### 이중우선순위큐 트리맵으로 해결
 - 최대힙, 최소힙으로 하면 remove에서 시간복잡도가 오래 걸려 이진탐색트리(레드블랙트리)를 활용
 - 트리셋을 쓰면 중복케이스가 해결이 안되므로 트리맵을 써서 해결
 - key값에 숫자, value에 해당 숫자의 갯수를 배정해 entry 구성
 - 최대값은 lastKey(), 최소값은 firstKey()로 뽑아냄
 - 전체 코드의 시간복잡도가 O(n^2)에서 O(N log n)으로 감소
+
+## 정수삼각형
+https://school.programmers.co.kr/learn/courses/30/lessons/43105
+
+- 이중배열을 쓰되 크기를 원본과 삼각형과 같게 수정. 
+- 동적계획법을 적용해 bottom-up 방식으로 순차적으로 중간 해를 구해서 올라감.
+- 어차피 최종값에서 max값을 찾는 거라 중간해도 max가 아닌 값들은 dp에 저장할 필요가 없음.
+- 좌우측변은 생각해보니 좌우측변의 계속된 누적합이라 따로 케이스를 나눔.
+- 최종 해들중에서 max값을 찾아서 answer로 반환.
