@@ -41,3 +41,10 @@ https://school.programmers.co.kr/learn/courses/30/lessons/43105
 - 어차피 최종값에서 max값을 찾는 거라 중간해도 max가 아닌 값들은 dp에 저장할 필요가 없음.
 - 좌우측변은 생각해보니 좌우측변의 계속된 누적합이라 따로 케이스를 나눔.
 - 최종 해들중에서 max값을 찾아서 answer로 반환.
+
+## 가장 먼 노드 (리팩토링)
+- HashMap 대신 maxDepth 변수를 선언해 이 변수와 tmpD를 비교해서 최대 깊이를 찾게 한다.
+
+- comb가 불필요한 클래스로 느껴져 2차원 int[] 배열로 교체. new는 필연적으로 써야하지만 그래도 클래스를 임의로 생성하는 것 보다 가독성도 좋아지고 활용하기 좋아졌다.
+
+- 불필요한 코드들 삭제하고 ArrayList<ArrayList<Integer>> 를 List<List<Integer>>로 바꿔 유연성을 높였다.
