@@ -1,0 +1,66 @@
+Controller는 입구와 출구역할 / Service 에서는 비즈니스 로직을 수행
+enums?
+여기서는 일단 db안쓰고 OrderList에 어레이리스트 만들어서 저장
+
+step1은 강한결합. 오더어플리케이션에서 객체 다 만들고 해야함 수정할때 다른 파일도 코드 바꿈
+포함관계 내부에서 명시적초기화로 사용
+
+step2는 서비스를 인터페이스로 통합해 약한결합으로 바꾸고 DI패턴까지 사용
+인터페이스로 약한결합으로 만들고 생성자를 통해 주입형태 DI패턴으로 바꿈
+=> 오더서비스에서 변화가 일어나도 생성자를 통해 주입을 받기 때문에
+오더어플리케이션에서는 영향 x. Main에서의 주문방식만 차이.
+
+1과2의 차이는 의존성 주입의 차이
+
+step3은 번거로움을 해결. Main의 부담도 줄여줌.
+injector 패키지 만들고 MenuInjector로 인터페이스 만들어서
+OrderService getService();  OrderService를 반환하는 추상메서드 만듬
+
+step3도 한계는 있지만 이건 spring에서 도와준다.
+
+----------------------------------------------
+
+@SpringBootApplication을 클래스에 달면 아무런 설정을 하지않아도 디폴트 설정을 다 알아서 해준다.
+
+SpringApplication.run(SpringIocDiInitApplication.class, args);
+이걸 통해 서버가 실행. 강제로 끄지 않는 이상 계속 실행되어 request를 받음
+
+
+@Autowired
+자바에서는 주입을 하려면 인젝터를 사용해야했지만 
+이걸 쓰면 인젝터를 만들 필요 없이 자동으로 찾아서 넣어준다.
+주입해달라고 스프링에게 알려주는 어노테이션이다.
+
+bean : 스프링이 관리하는 클래스. 
+bean타입은 왼쪽에 커피콩달림
+bean으로 등록된 클래스들만 Autowired가 가져와서 쓸 수 있다.
+@Controller나 @Service 같은 어노테이션을 등록해야 bean으로 쓸 수 있다.
+
+
+원래 자바의 클래스는 사용하려면 new를써서 반드시 인스턴스화 해줘야한다.
+하지만 스프링에서는 bean과 IoC컨테이너를 활용해서 그런것들을 해결해줌
+
+bean을 관리하고 알아서 넣어주는게 IoC컨테이너
+
+H2 DB에서는 "Order"라는 단어가 이미 쓰이는 곳이 있기때문에
+@Entity(name = "orders")
+public class Order {
+처럼 이름을 따로 지정해줘야한다. 이러면 orders라는 테이블로 생성된다.
+
+Controller 구분해서 하다가 /주소 부분도 같고 메서드도 같으면 충돌이난다
+그럴때 RequestMapping("/각자이름") 으로 클래스위에 애너테이션으로 구분하면 된다.
+그 클래스안에 들어가는 모든 url의 제일 앞에 저게 적용이 된다.
+
+이렇게 하면 orderService에 매칭되는 구현체가 중복이되기때문에
+스프링이 어떤걸 매칭해야될지몰라서 오류가 생긴다 
+@Primary 와 @Qualifier로 구분할 수 있다.
+중복이된 구현체 클래스 위에 @Qualitier("이름")을 달고 원하는 객체 앞에  @Qualitier("이름")붙이면된다.
+
+실제로는 저런 오류 날 가능성 크게는 없다
+
+
+@RequiredArgsConstructor
+서비스에서 final 달린 repository 필드들 생성자를 만들지 않아도 자동으로 만들어준다.
+
+
+
